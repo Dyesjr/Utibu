@@ -4,7 +4,13 @@ import com.hospital.hospitali.dto.ProductDto;
 import com.hospital.hospitali.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+<<<<<<< HEAD
 import org.springframework.web.bind.annotation.*;
+=======
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+>>>>>>> eacdff1488ba5c9d62e0dfdd10243491474f1416
 
 import java.util.List;
 
@@ -20,6 +26,7 @@ public class ProductController {
         List<ProductDto> products = productService.getAllProducts();
         return ResponseEntity.ok(products);
     }
+<<<<<<< HEAD
 
     @GetMapping("/{productId}")
     public ResponseEntity<ProductDto> getProductDetails(@PathVariable Long productId) {
@@ -36,4 +43,6 @@ public class ProductController {
         productService.createProduct(productDto);
         return ResponseEntity.ok("Product created successfully");
     }
+=======
+>>>>>>> eacdff1488ba5c9d62e0dfdd10243491474f1416
 }

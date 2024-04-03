@@ -30,9 +30,12 @@ public class OrderRepository {
         Order order = entityManager.find(Order.class, orderId);
         return Optional.ofNullable(order);
     }
+<<<<<<< HEAD
 
     public List<Order> findAll() {
         return entityManager.createQuery("SELECT o FROM Order o", Order.class)
                 .getResultList();
     }
+=======
+>>>>>>> eacdff1488ba5c9d62e0dfdd10243491474f1416
 }

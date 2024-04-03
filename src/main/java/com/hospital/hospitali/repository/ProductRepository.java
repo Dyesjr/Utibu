@@ -24,7 +24,10 @@ public class ProductRepository {
     }
 
 
+<<<<<<< HEAD
     public void save(Product product) {
         entityManager.persist(product);
     }
+=======
+>>>>>>> eacdff1488ba5c9d62e0dfdd10243491474f1416
 }
