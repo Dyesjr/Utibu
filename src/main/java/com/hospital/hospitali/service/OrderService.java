@@ -9,4 +9,6 @@ public interface OrderService {
     List<OrderDto> getOrderHistory(Long userId);
 
     OrderDto getOrderDetails(Long orderId);
+
+    List<OrderDto> getAllOrders();
 }

@@ -24,6 +24,33 @@ public class ProductServiceImpl implements ProductService {
                 .collect(Collectors.toList());
     }
 
+    @Override
+    public ProductDto getProductDetails(Long productId) {
+        // Retrieve the product entity from the database using the productId
+        Product product = (Product) productRepository.findById(productId)
+                .orElse(null);
+
+        // If product is found, convert it to ProductDto and return
+        if (product != null) {
+            return convertToDto(product);
+        } else {
+            // If product is not found, return null or throw an exception based on your requirement
+            return null;
+        }
+    }
+
+    @Override
+    public void createProduct(ProductDto productDto) {
+        // Convert ProductDto to Product entity
+        Product product = new Product();
+        product.setName(productDto.getName());
+        product.setPrice(productDto.getPrice());
+
+        // Save the product to the database
+        productRepository.save(product);
+
+    }
+
     private ProductDto convertToDto(Product product) {
         ProductDto dto = new ProductDto();
         dto.setId(product.getId());

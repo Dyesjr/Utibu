@@ -22,6 +22,11 @@ public class OrderController {
     }
 
 
+    @GetMapping
+    public ResponseEntity<List<OrderDto>> getAllOrders() {
+        List<OrderDto> orders = orderService.getAllOrders();
+        return ResponseEntity.ok(orders);
+    }
 
     @GetMapping("/{orderId}")
     public ResponseEntity<OrderDto> getOrderDetails(@PathVariable Long orderId) {
@@ -32,6 +37,8 @@ public class OrderController {
             return ResponseEntity.notFound().build();
         }
     }
+
+
 
     @GetMapping("/history/{userId}")
     public ResponseEntity<List<OrderDto>> getOrderHistory(@PathVariable Long userId) {

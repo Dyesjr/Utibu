@@ -11,6 +11,7 @@ import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -53,6 +54,21 @@ public class OrderServiceImpl implements OrderService {
         } else {
             return null;
         }
+    }
+
+    @Override
+    public List<OrderDto> getAllOrders() {
+        List<OrderDto> orders = new ArrayList<>();
+        // Retrieve all orders from the database
+        List<Order> orderEntities = orderRepository.findAll();
+
+        // Convert order entities to order DTOs
+        for (Order order : orderEntities) {
+            OrderDto orderDto = convertToDto(order);
+            orders.add(orderDto);
+        }
+
+        return orders;
     }
 
     private OrderItem convertToOrderItem(OrderItemDto orderItemDto) {

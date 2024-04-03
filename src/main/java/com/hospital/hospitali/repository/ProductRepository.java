@@ -24,4 +24,7 @@ public class ProductRepository {
     }
 
 
+    public void save(Product product) {
+        entityManager.persist(product);
+    }
 }
