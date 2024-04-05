@@ -11,10 +11,9 @@ import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-<<<<<<< HEAD
+
 import java.util.ArrayList;
-=======
->>>>>>> eacdff1488ba5c9d62e0dfdd10243491474f1416
+
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -59,7 +58,7 @@ public class OrderServiceImpl implements OrderService {
         }
     }
 
-<<<<<<< HEAD
+
     @Override
     public List<OrderDto> getAllOrders() {
         List<OrderDto> orders = new ArrayList<>();
@@ -75,8 +74,7 @@ public class OrderServiceImpl implements OrderService {
         return orders;
     }
 
-=======
->>>>>>> eacdff1488ba5c9d62e0dfdd10243491474f1416
+
     private OrderItem convertToOrderItem(OrderItemDto orderItemDto) {
         OrderItem orderItem = new OrderItem();
         orderItem.setProductId((Long) productRepository.findById(orderItemDto.getProductId()).orElse(null));

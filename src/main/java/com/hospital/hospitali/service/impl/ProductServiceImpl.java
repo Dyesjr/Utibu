@@ -24,7 +24,7 @@ public class ProductServiceImpl implements ProductService {
                 .collect(Collectors.toList());
     }
 
-<<<<<<< HEAD
+
     @Override
     public ProductDto getProductDetails(Long productId) {
         // Retrieve the product entity from the database using the productId
@@ -52,8 +52,7 @@ public class ProductServiceImpl implements ProductService {
 
     }
 
-=======
->>>>>>> eacdff1488ba5c9d62e0dfdd10243491474f1416
+
     private ProductDto convertToDto(Product product) {
         ProductDto dto = new ProductDto();
         dto.setId(product.getId());

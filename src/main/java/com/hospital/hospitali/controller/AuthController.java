@@ -24,19 +24,13 @@ public class AuthController {
         this.userService = userService;
     }
 
-<<<<<<< HEAD
-=======
-    // handler method to handle home page request
->>>>>>> eacdff1488ba5c9d62e0dfdd10243491474f1416
+
     @GetMapping("/index")
     public String home(){
         return "index";
     }
 
-<<<<<<< HEAD
-=======
-    // handler method to handle user registration form request
->>>>>>> eacdff1488ba5c9d62e0dfdd10243491474f1416
+
     @GetMapping("/register")
     public String showRegistrationForm(Model model){
         // create model object to store form data
@@ -45,10 +39,7 @@ public class AuthController {
         return "register";
     }
 
-<<<<<<< HEAD
-=======
-    // handler method to handle user registration form submit request
->>>>>>> eacdff1488ba5c9d62e0dfdd10243491474f1416
+
     @PostMapping("/register/save")
     public String registration(@Validated @ModelAttribute("user") UserDto userDto,
                                BindingResult result,
@@ -69,10 +60,6 @@ public class AuthController {
         return "redirect:/register?success";
     }
 
-<<<<<<< HEAD
-=======
-    // handler method to handle list of users
->>>>>>> eacdff1488ba5c9d62e0dfdd10243491474f1416
     @GetMapping("/users")
     public String users(Model model){
         List<UserDto> users = userService.findAllUsers();
@@ -80,10 +67,7 @@ public class AuthController {
         return "users";
     }
 
-<<<<<<< HEAD
-=======
-    // handler method to handle login request
->>>>>>> eacdff1488ba5c9d62e0dfdd10243491474f1416
+
     @GetMapping("/login")
     public String login(){
         return "login";

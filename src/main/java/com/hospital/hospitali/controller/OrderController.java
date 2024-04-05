@@ -22,14 +22,11 @@ public class OrderController {
     }
 
 
-<<<<<<< HEAD
     @GetMapping
     public ResponseEntity<List<OrderDto>> getAllOrders() {
         List<OrderDto> orders = orderService.getAllOrders();
         return ResponseEntity.ok(orders);
     }
-=======
->>>>>>> eacdff1488ba5c9d62e0dfdd10243491474f1416
 
     @GetMapping("/{orderId}")
     public ResponseEntity<OrderDto> getOrderDetails(@PathVariable Long orderId) {
@@ -41,11 +38,7 @@ public class OrderController {
         }
     }
 
-<<<<<<< HEAD
 
-
-=======
->>>>>>> eacdff1488ba5c9d62e0dfdd10243491474f1416
     @GetMapping("/history/{userId}")
     public ResponseEntity<List<OrderDto>> getOrderHistory(@PathVariable Long userId) {
         List<OrderDto> orderHistory = orderService.getOrderHistory(userId);
